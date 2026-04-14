@@ -1,0 +1,11 @@
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/net8.0/Sgerg.deps.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/net8.0/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/net8.0/Sgerg.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.AssemblyInfoInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.AssemblyInfo.cs
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.csproj.CoreCompileInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/refint/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/Sgerg.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/net8.0/ref/Sgerg.dll
