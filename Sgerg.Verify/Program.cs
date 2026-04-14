@@ -8,12 +8,12 @@ namespace Sgerg.Verify
         private static void Main()
         {
             var gas = new NaturalGasPropertyInputs(
-                AbsolutePressureBar: 60.0,
-                TemperatureCelsius: -3.15,
-                RelativeDensity: 0.581,
-                CarbonDioxideMoleFraction: 0.006,
-                HydrogenMoleFraction: 0.000,
-                SuperiorCalorificValueMegajoulesPerCubicMeter: 40.66);
+                absolutePressureBar: 60.0,
+                temperatureCelsius: -3.15,
+                relativeDensity: 0.581,
+                carbonDioxideMoleFraction: 0.006,
+                hydrogenMoleFraction: 0.000,
+                superiorCalorificValueMegajoulesPerCubicMeter: 40.66);
 
             var result = new NaturalGasCompressionCalculator().Calculate(gas);
 

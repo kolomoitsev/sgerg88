@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
         "projectName": "Sgerg",
         "projectPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
-        "packagesPath": "/Users/pavlo/.nuget/packages/",
+        "packagesPath": "/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget",
         "outputPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -44,12 +44,6 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
-            "IsExternalInit": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.3, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",

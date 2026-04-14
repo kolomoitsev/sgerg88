@@ -1,7 +1,7 @@
 using System;
 
-namespace Sgerg;
-
+namespace Sgerg
+{
 /// <summary>
 /// Calculates natural-gas compression factor <i>Z</i> using the SGERG-88 virial method
 /// (ISO 12213-3 — compression factor from physical properties).
@@ -16,13 +16,28 @@ public sealed class NaturalGasCompressionCalculator
     /// Mole-fraction snapshot for virial mixing (SGERG pseudo-groups: fuel gas, N₂, CO₂, H₂,
     /// plus the seventh correlated fraction tied to hydrogen in the standard procedure).
     /// </summary>
-    private readonly record struct MoleFractionSnapshot(
-        double EquivalentFuelGas,
-        double Nitrogen,
-        double CarbonDioxide,
-        double Hydrogen,
-        double AuxiliarySpeciesSeven)
+    private readonly struct MoleFractionSnapshot
     {
+        public readonly double EquivalentFuelGas;
+        public readonly double Nitrogen;
+        public readonly double CarbonDioxide;
+        public readonly double Hydrogen;
+        public readonly double AuxiliarySpeciesSeven;
+
+        public MoleFractionSnapshot(
+            double equivalentFuelGas,
+            double nitrogen,
+            double carbonDioxide,
+            double hydrogen,
+            double auxiliarySpeciesSeven)
+        {
+            EquivalentFuelGas = equivalentFuelGas;
+            Nitrogen = nitrogen;
+            CarbonDioxide = carbonDioxide;
+            Hydrogen = hydrogen;
+            AuxiliarySpeciesSeven = auxiliarySpeciesSeven;
+        }
+
         public double FuelSquared => EquivalentFuelGas * EquivalentFuelGas;
         public double FuelNitrogen => EquivalentFuelGas * Nitrogen;
         public double FuelCarbonDioxide => EquivalentFuelGas * CarbonDioxide;
@@ -37,8 +52,19 @@ public sealed class NaturalGasCompressionCalculator
     }
 
     /// <summary>Coefficients for a₀ + a₁T + a₂T² with T in kelvin (SGERG correlation form).</summary>
-    private readonly record struct QuadraticTemperaturePolynomial(double A0, double A1, double A2)
+    private readonly struct QuadraticTemperaturePolynomial
     {
+        public readonly double A0;
+        public readonly double A1;
+        public readonly double A2;
+
+        public QuadraticTemperaturePolynomial(double a0, double a1, double a2)
+        {
+            A0 = a0;
+            A1 = a1;
+            A2 = a2;
+        }
+
         public double EvaluateKelvin(double kelvin)
         {
             var t2 = kelvin * kelvin;
@@ -47,11 +73,22 @@ public sealed class NaturalGasCompressionCalculator
     }
 
     /// <summary>Fuel (group-1) virial term as quadratic in T, weighted by H⁰, H¹, H² (calorific parameter H).</summary>
-    private readonly record struct FuelVirialPolynomialInH(
-        QuadraticTemperaturePolynomial IndependentOfH,
-        QuadraticTemperaturePolynomial LinearInH,
-        QuadraticTemperaturePolynomial QuadraticInH)
+    private readonly struct FuelVirialPolynomialInH
     {
+        public readonly QuadraticTemperaturePolynomial IndependentOfH;
+        public readonly QuadraticTemperaturePolynomial LinearInH;
+        public readonly QuadraticTemperaturePolynomial QuadraticInH;
+
+        public FuelVirialPolynomialInH(
+            QuadraticTemperaturePolynomial independentOfH,
+            QuadraticTemperaturePolynomial linearInH,
+            QuadraticTemperaturePolynomial quadraticInH)
+        {
+            IndependentOfH = independentOfH;
+            LinearInH = linearInH;
+            QuadraticInH = quadraticInH;
+        }
+
         public double Evaluate(double kelvin, double calorificParameterH)
         {
             var p0 = IndependentOfH.EvaluateKelvin(kelvin);
@@ -88,38 +125,38 @@ public sealed class NaturalGasCompressionCalculator
     private static class Sgerg88VirialCoefficients
     {
         /// <summary>Second virial for fuel (group 1), explicit in calorific parameter H.</summary>
-        public static readonly FuelVirialPolynomialInH SecondVirialFuelB11 = new(
-            IndependentOfH: new(A0: -0.425468, A1: 0.286500e-2, A2: -0.462073e-5),
-            LinearInH: new(A0: 0.877118e-3, A1: -0.556281e-5, A2: 0.881510e-8),
-            QuadraticInH: new(A0: -0.824747e-6, A1: 0.431436e-8, A2: -0.608319e-11));
+        public static readonly FuelVirialPolynomialInH SecondVirialFuelB11 = new FuelVirialPolynomialInH(
+            new QuadraticTemperaturePolynomial(-0.425468, 0.286500e-2, -0.462073e-5),
+            new QuadraticTemperaturePolynomial(0.877118e-3, -0.556281e-5, 0.881510e-8),
+            new QuadraticTemperaturePolynomial(-0.824747e-6, 0.431436e-8, -0.608319e-11));
 
         /// <summary>Third virial for fuel triple, explicit in H.</summary>
-        public static readonly FuelVirialPolynomialInH ThirdVirialFuelC111 = new(
-            IndependentOfH: new(A0: -0.302488, A1: 0.195861e-2, A2: -0.316302e-5),
-            LinearInH: new(A0: 0.646422e-3, A1: -0.422876e-5, A2: 0.688157e-8),
-            QuadraticInH: new(A0: -0.332805e-6, A1: 0.223160e-8, A2: -0.367713e-11));
+        public static readonly FuelVirialPolynomialInH ThirdVirialFuelC111 = new FuelVirialPolynomialInH(
+            new QuadraticTemperaturePolynomial(-0.302488, 0.195861e-2, -0.316302e-5),
+            new QuadraticTemperaturePolynomial(0.646422e-3, -0.422876e-5, 0.688157e-8),
+            new QuadraticTemperaturePolynomial(-0.332805e-6, 0.223160e-8, -0.367713e-11));
 
         /// <summary>Binary second-virial contributions B_ij(T), one row per <see cref="SecondVirialBinaryIndex"/>.</summary>
         public static readonly QuadraticTemperaturePolynomial[] SecondVirialBinaryQuadratics = new QuadraticTemperaturePolynomial[]
         {
-            new(A0: -0.144600, A1: 0.740910e-3, A2: -0.911950e-6),   // N2–N2
-            new(A0: -0.339693, A1: 0.161176e-2, A2: -0.204429e-5),   // N2–CO2
-            new(A0: -0.868340, A1: 0.403760e-2, A2: -0.516570e-5),   // CO2–CO2
-            new(A0: -0.521280e-1, A1: 0.271570e-3, A2: -0.25e-6),    // fuel–H2
-            new(A0: -0.687290e-1, A1: -0.239381e-5, A2: 0.518195e-6), // fuel–aux. 7
-            new(A0: -0.110596e-2, A1: 0.813385e-4, A2: -0.987220e-7), // H2–H2
-            new(A0: -0.130820, A1: 0.602540e-3, A2: -0.644300e-6),    // aux. 7–aux. 7
+            new QuadraticTemperaturePolynomial(-0.144600, 0.740910e-3, -0.911950e-6),   // N2–N2
+            new QuadraticTemperaturePolynomial(-0.339693, 0.161176e-2, -0.204429e-5),   // N2–CO2
+            new QuadraticTemperaturePolynomial(-0.868340, 0.403760e-2, -0.516570e-5),   // CO2–CO2
+            new QuadraticTemperaturePolynomial(-0.521280e-1, 0.271570e-3, -0.25e-6),    // fuel–H2
+            new QuadraticTemperaturePolynomial(-0.687290e-1, -0.239381e-5, 0.518195e-6), // fuel–aux. 7
+            new QuadraticTemperaturePolynomial(-0.110596e-2, 0.813385e-4, -0.987220e-7), // H2–H2
+            new QuadraticTemperaturePolynomial(-0.130820, 0.602540e-3, -0.644300e-6),    // aux. 7–aux. 7
         };
 
         /// <summary>Triple third-virial contributions C_ijk(T), one row per <see cref="ThirdVirialTripleIndex"/>.</summary>
         public static readonly QuadraticTemperaturePolynomial[] ThirdVirialTripleQuadratics = new QuadraticTemperaturePolynomial[]
         {
-            new(A0: 0.784980e-2, A1: -0.398950e-4, A2: 0.611870e-7),   // N2–N2–N2
-            new(A0: 0.552066e-2, A1: -0.168609e-4, A2: 0.157169e-7),   // N2–N2–CO2
-            new(A0: 0.358783e-2, A1: 0.806674e-5, A2: -0.325798e-7),  // N2–CO2–CO2
-            new(A0: 0.205130e-2, A1: 0.348880e-4, A2: -0.837030e-7),   // CO2–CO2–CO2
-            new(A0: 0.104711e-2, A1: -0.364887e-5, A2: 0.467095e-8),   // H2–H2–H2
-            new(A0: 0.736748e-2, A1: -0.276578e-4, A2: 0.343051e-7),   // fuel–fuel–aux. 7
+            new QuadraticTemperaturePolynomial(0.784980e-2, -0.398950e-4, 0.611870e-7),   // N2–N2–N2
+            new QuadraticTemperaturePolynomial(0.552066e-2, -0.168609e-4, 0.157169e-7),   // N2–N2–CO2
+            new QuadraticTemperaturePolynomial(0.358783e-2, 0.806674e-5, -0.325798e-7),  // N2–CO2–CO2
+            new QuadraticTemperaturePolynomial(0.205130e-2, 0.348880e-4, -0.837030e-7),   // CO2–CO2–CO2
+            new QuadraticTemperaturePolynomial(0.104711e-2, -0.364887e-5, 0.467095e-8),   // H2–H2–H2
+            new QuadraticTemperaturePolynomial(0.736748e-2, -0.276578e-4, 0.343051e-7),   // fuel–fuel–aux. 7
         };
 
         public static QuadraticTemperaturePolynomial SecondBinary(SecondVirialBinaryIndex index) =>
@@ -187,9 +224,9 @@ public sealed class NaturalGasCompressionCalculator
         double hydrogenMoleFraction,
         double superiorCalorificValueMegajoulesPerCubicMeter)
     {
-        if (absolutePressureBar is < 0 or > 120)
+        if (absolutePressureBar < 0 || absolutePressureBar > 120)
             throw new ArgumentOutOfRangeException(nameof(absolutePressureBar), "Pressure must be 0–120 bar.");
-        if (temperatureCelsius is < -23 or > 65)
+        if (temperatureCelsius < -23 || temperatureCelsius > 65)
             throw new ArgumentOutOfRangeException(nameof(temperatureCelsius), "Temperature must be -23 to 65 °C.");
 
         var (nitrogenMoleFraction, compressionFactor, molarDensityMolPerLiter) = RunSgergIteration(
@@ -202,16 +239,21 @@ public sealed class NaturalGasCompressionCalculator
 
         // Internal model uses R in bar·L/(mol·K); reciprocal molar volume is mol/L — convert to mol/m³.
         var molarDensitySi = molarDensityMolPerLiter * 1000.0;
-        return new NaturalGasCompressionResult(nitrogenMoleFraction, compressionFactor, molarDensitySi);
+        return new NaturalGasCompressionResult(
+            nitrogenMoleFraction,
+            compressionFactor,
+            molarDensitySi);
     }
 
-    private MoleFractionSnapshot BuildMoleFractionSnapshot() =>
-        new(
-            EquivalentFuelGas: _equivalentFuelMoleFraction,
-            Nitrogen: _nitrogenMoleFraction,
-            CarbonDioxide: _carbonDioxideMoleFraction,
-            Hydrogen: _hydrogenMoleFraction,
-            AuxiliarySpeciesSeven: _hydrogenMoleFraction * HydrogenToAuxiliarySevenMoleRatio);
+    private MoleFractionSnapshot BuildMoleFractionSnapshot()
+    {
+        return new MoleFractionSnapshot(
+            _equivalentFuelMoleFraction,
+            _nitrogenMoleFraction,
+            _carbonDioxideMoleFraction,
+            _hydrogenMoleFraction,
+            _hydrogenMoleFraction * HydrogenToAuxiliarySevenMoleRatio);
+    }
 
     private (double nitrogenMoleFraction, double compressionFactor, double molarDensityMolPerLiter) RunSgergIteration(
         double pressureBar,
@@ -225,13 +267,13 @@ public sealed class NaturalGasCompressionCalculator
         _carbonDioxideMoleFraction = co2MoleFraction;
         _hydrogenMoleFraction = h2MoleFraction;
 
-        if (relativeDensity is < 0.55 or > 0.90)
+        if (relativeDensity < 0.55 || relativeDensity > 0.90)
             throw new ArgumentOutOfRangeException(nameof(relativeDensity), "Relative density must be 0.55–0.90.");
-        if (_carbonDioxideMoleFraction is < 0.0 or > 0.30)
+        if (_carbonDioxideMoleFraction < 0.0 || _carbonDioxideMoleFraction > 0.30)
             throw new ArgumentOutOfRangeException(nameof(co2MoleFraction), "CO₂ mole fraction must be 0–0.30.");
-        if (_inputSuperiorCalorificValue is < 20.0 or > 48.0)
+        if (_inputSuperiorCalorificValue < 20.0 || _inputSuperiorCalorificValue > 48.0)
             throw new ArgumentOutOfRangeException(nameof(superiorCalorificValueMjPerM3), "Calorific value must be 20–48 MJ/m³.");
-        if (_hydrogenMoleFraction is < 0.0 or > 0.10)
+        if (_hydrogenMoleFraction < 0.0 || _hydrogenMoleFraction > 0.10)
             throw new ArgumentOutOfRangeException(nameof(h2MoleFraction), "H₂ mole fraction must be 0–0.10.");
 
         if (0.55 + 0.97 * _carbonDioxideMoleFraction - 0.45 * _hydrogenMoleFraction > relativeDensity)
@@ -278,7 +320,7 @@ public sealed class NaturalGasCompressionCalculator
             break;
         }
 
-        if (_nitrogenMoleFraction is < -0.01 or > 0.5)
+        if (_nitrogenMoleFraction < -0.01 || _nitrogenMoleFraction > 0.5)
             throw new InvalidOperationException("Calculated N₂ fraction out of range.");
         if (_nitrogenMoleFraction + _carbonDioxideMoleFraction > 0.5)
             throw new InvalidOperationException("Sum of N₂ and CO₂ mole fractions out of range.");
@@ -414,4 +456,5 @@ public sealed class NaturalGasCompressionCalculator
                 return (molarVolumeLitersPerMol, compressionFactor);
         }
     }
+}
 }

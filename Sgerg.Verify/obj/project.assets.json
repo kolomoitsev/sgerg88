@@ -939,7 +939,7 @@
     ]
   },
   "packageFolders": {
-    "/Users/pavlo/.nuget/packages/": {}
+    "/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -947,7 +947,7 @@
       "projectUniqueName": "/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/Sgerg.Verify.csproj",
       "projectName": "Sgerg.Verify",
       "projectPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/Sgerg.Verify.csproj",
-      "packagesPath": "/Users/pavlo/.nuget/packages/",
+      "packagesPath": "/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget",
       "outputPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [

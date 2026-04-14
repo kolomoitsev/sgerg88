@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "IsExternalInit/1.0.3": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false
-          }
-        },
-        "build": {
-          "build/IsExternalInit.props": {}
-        }
-      },
       "Microsoft.NETCore.App/2.1.30": {
         "type": "package",
         "dependencies": {
@@ -458,29 +445,6 @@
     }
   },
   "libraries": {
-    "IsExternalInit/1.0.3": {
-      "sha512": "jcdN7vpDwjnV7U9KGCv/oNIWHJ/RIbyrpVsLQL2qbj6Cbi5U3iafKsaMn1rP+qCbkLbkB0v6oAwbVEkqrUnlyg==",
-      "type": "package",
-      "path": "isexternalinit/1.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/IsExternalInit.props",
-        "content/net20/IsExternalInit/IsExternalInit.cs",
-        "content/net40/IsExternalInit/IsExternalInit.cs",
-        "content/net5.0/IsExternalInit/IsExternalInit.cs",
-        "content/netstandard1.0/IsExternalInit/IsExternalInit.cs",
-        "content/netstandard2.0/IsExternalInit/IsExternalInit.cs",
-        "contentFiles/cs/net20/IsExternalInit/IsExternalInit.cs",
-        "contentFiles/cs/net40/IsExternalInit/IsExternalInit.cs",
-        "contentFiles/cs/net5.0/IsExternalInit/IsExternalInit.cs",
-        "contentFiles/cs/netstandard1.0/IsExternalInit/IsExternalInit.cs",
-        "contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs",
-        "icon.png",
-        "isexternalinit.1.0.3.nupkg.sha512",
-        "isexternalinit.nuspec"
-      ]
-    },
     "Microsoft.NETCore.App/2.1.30": {
       "sha512": "Hs73dGereVEUeE0f9nGgNrTgESyhm/41pQ3gIW7P/Bwv8yBJwsw8T0Yb40uessXNU6HcfZstudf70+yaHHK/sw==",
       "type": "package",
@@ -955,12 +919,11 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "IsExternalInit >= 1.0.3",
       "Microsoft.NETCore.App >= 2.1.30"
     ]
   },
   "packageFolders": {
-    "/Users/pavlo/.nuget/packages/": {}
+    "/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -968,7 +931,7 @@
       "projectUniqueName": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
       "projectName": "Sgerg",
       "projectPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
-      "packagesPath": "/Users/pavlo/.nuget/packages/",
+      "packagesPath": "/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget",
       "outputPath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -1002,12 +965,6 @@
       "netcoreapp2.1": {
         "targetAlias": "netcoreapp2.1",
         "dependencies": {
-          "IsExternalInit": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[1.0.3, )"
-          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",

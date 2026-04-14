@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("Natural gas compression factor via SGERG-88 (ISO 12213-3 physical-properties meth" +
     "od)."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6980a8c0b9ac596903614b0f46b71f956b5b3ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6120fa2f19dc1d464d191290c5899fc5dca5975")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sgerg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sgerg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4,15 +4,15 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/pavlo/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/pavlo/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/Users/pavlo/.nuget/packages/" />
+    <SourceRoot Include="/var/folders/xc/v2gfvrvj39bfqc10rj78g7xh0000gn/T/cursor-sandbox-cache/f7be792bf6ee53aff378d0f7e568ff26/nuget/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.netcore.app/2.1.30/build/netcoreapp2.1/Microsoft.NETCore.App.props" Condition="Exists('$(NuGetPackageRoot)microsoft.netcore.app/2.1.30/build/netcoreapp2.1/Microsoft.NETCore.App.props')" />
+    <Import Project="$(NuGetPackageRoot)/microsoft.netcore.app/2.1.30/build/netcoreapp2.1/Microsoft.NETCore.App.props" Condition="Exists('$(NuGetPackageRoot)/microsoft.netcore.app/2.1.30/build/netcoreapp2.1/Microsoft.NETCore.App.props')" />
   </ImportGroup>
 </Project>

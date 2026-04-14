@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sgerg.Verify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6980a8c0b9ac596903614b0f46b71f956b5b3ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6120fa2f19dc1d464d191290c5899fc5dca5975")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sgerg.Verify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sgerg.Verify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

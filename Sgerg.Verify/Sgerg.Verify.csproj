@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RuntimeFrameworkVersion>2.1.30</RuntimeFrameworkVersion>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>7.3</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <RootNamespace>Sgerg.Verify</RootNamespace>
