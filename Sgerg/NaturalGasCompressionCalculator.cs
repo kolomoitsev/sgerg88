@@ -98,8 +98,8 @@ public sealed class NaturalGasCompressionCalculator
             QuadraticInH: new(A0: -0.332805e-6, A1: 0.223160e-8, A2: -0.367713e-11));
 
         /// <summary>Binary second-virial contributions B_ij(T), one row per <see cref="SecondVirialBinaryIndex"/>.</summary>
-        public static readonly QuadraticTemperaturePolynomial[] SecondVirialBinaryQuadratics =
-        [
+        public static readonly QuadraticTemperaturePolynomial[] SecondVirialBinaryQuadratics = new QuadraticTemperaturePolynomial[]
+        {
             new(A0: -0.144600, A1: 0.740910e-3, A2: -0.911950e-6),   // N2–N2
             new(A0: -0.339693, A1: 0.161176e-2, A2: -0.204429e-5),   // N2–CO2
             new(A0: -0.868340, A1: 0.403760e-2, A2: -0.516570e-5),   // CO2–CO2
@@ -107,18 +107,18 @@ public sealed class NaturalGasCompressionCalculator
             new(A0: -0.687290e-1, A1: -0.239381e-5, A2: 0.518195e-6), // fuel–aux. 7
             new(A0: -0.110596e-2, A1: 0.813385e-4, A2: -0.987220e-7), // H2–H2
             new(A0: -0.130820, A1: 0.602540e-3, A2: -0.644300e-6),    // aux. 7–aux. 7
-        ];
+        };
 
         /// <summary>Triple third-virial contributions C_ijk(T), one row per <see cref="ThirdVirialTripleIndex"/>.</summary>
-        public static readonly QuadraticTemperaturePolynomial[] ThirdVirialTripleQuadratics =
-        [
+        public static readonly QuadraticTemperaturePolynomial[] ThirdVirialTripleQuadratics = new QuadraticTemperaturePolynomial[]
+        {
             new(A0: 0.784980e-2, A1: -0.398950e-4, A2: 0.611870e-7),   // N2–N2–N2
             new(A0: 0.552066e-2, A1: -0.168609e-4, A2: 0.157169e-7),   // N2–N2–CO2
             new(A0: 0.358783e-2, A1: 0.806674e-5, A2: -0.325798e-7),  // N2–CO2–CO2
             new(A0: 0.205130e-2, A1: 0.348880e-4, A2: -0.837030e-7),   // CO2–CO2–CO2
             new(A0: 0.104711e-2, A1: -0.364887e-5, A2: 0.467095e-8),   // H2–H2–H2
             new(A0: 0.736748e-2, A1: -0.276578e-4, A2: 0.343051e-7),   // fuel–fuel–aux. 7
-        ];
+        };
 
         public static QuadraticTemperaturePolynomial SecondBinary(SecondVirialBinaryIndex index) =>
             SecondVirialBinaryQuadratics[(int)index];

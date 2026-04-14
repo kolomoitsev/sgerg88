@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/UDMZso6EiA=",
+  "dgSpecHash": "47RWjwmYUiU=",
   "success": true,
   "projectFilePath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
   "expectedPackageFiles": [
-    "/Users/pavlo/.nuget/packages/microsoft.netcore.app.ref/8.0.25/microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
-    "/Users/pavlo/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }

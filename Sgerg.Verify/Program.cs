@@ -3,10 +3,10 @@ using Sgerg;
 var gas = new NaturalGasPropertyInputs(
     AbsolutePressureBar: 60.0,
     TemperatureCelsius: -3.15,
-    RelativeDensity: 0.609,
-    CarbonDioxideMoleFraction: 0.005,
+    RelativeDensity: 0.581,
+    CarbonDioxideMoleFraction: 0.006,
     HydrogenMoleFraction: 0.000,
-    SuperiorCalorificValueMegajoulesPerCubicMeter: 40.62);
+    SuperiorCalorificValueMegajoulesPerCubicMeter: 40.66);
 
 var result = new NaturalGasCompressionCalculator().Calculate(gas);
 
