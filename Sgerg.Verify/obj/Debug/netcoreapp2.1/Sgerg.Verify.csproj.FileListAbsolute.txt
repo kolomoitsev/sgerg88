@@ -1,0 +1,17 @@
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.Verify.deps.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.Verify.runtimeconfig.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.Verify.runtimeconfig.dev.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.Verify.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.Verify.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/bin/Debug/netcoreapp2.1/Sgerg.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.csproj.AssemblyReference.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.AssemblyInfoInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.AssemblyInfo.cs
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.csproj.CoreCompileInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.sourcelink.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Ve.55663F7C.Up2Date
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg.Verify/obj/Debug/netcoreapp2.1/Sgerg.Verify.genruntimeconfig.cache

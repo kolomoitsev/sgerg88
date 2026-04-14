@@ -1,3 +1,5 @@
+using System;
+
 namespace Sgerg;
 
 /// <summary>Outcome of a SGERG-88 compression-factor calculation.</summary>

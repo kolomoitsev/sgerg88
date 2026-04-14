@@ -1,0 +1,11 @@
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.csproj.AssemblyReference.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.AssemblyInfoInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.AssemblyInfo.cs
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.csproj.CoreCompileInputs.cache
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.sourcelink.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/netcoreapp2.1/Sgerg.deps.json
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/netcoreapp2.1/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/bin/Debug/netcoreapp2.1/Sgerg.pdb
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.dll
+/Users/pavlo/Desktop/projects/sgerg/Sgerg/obj/Debug/netcoreapp2.1/Sgerg.pdb

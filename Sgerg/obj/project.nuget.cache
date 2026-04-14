@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "47RWjwmYUiU=",
+  "dgSpecHash": "qz/EdJA1ahQ=",
   "success": true,
   "projectFilePath": "/Users/pavlo/Desktop/projects/sgerg/Sgerg/Sgerg.csproj",
   "expectedPackageFiles": [
-    "/Users/pavlo/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
-    "/Users/pavlo/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
+    "/Users/pavlo/.nuget/packages/isexternalinit/1.0.3/isexternalinit.1.0.3.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.app/2.1.30/microsoft.netcore.app.2.1.30.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.dotnetapphost/2.1.30/microsoft.netcore.dotnetapphost.2.1.30.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.dotnethostpolicy/2.1.30/microsoft.netcore.dotnethostpolicy.2.1.30.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.dotnethostresolver/2.1.30/microsoft.netcore.dotnethostresolver.2.1.30.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.platforms/2.1.14/microsoft.netcore.platforms.2.1.14.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/microsoft.netcore.targets/2.0.0/microsoft.netcore.targets.2.0.0.nupkg.sha512",
+    "/Users/pavlo/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

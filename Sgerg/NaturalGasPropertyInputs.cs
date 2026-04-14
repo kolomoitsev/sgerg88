@@ -1,3 +1,5 @@
+using System;
+
 namespace Sgerg;
 
 /// <summary>Measured or reported natural-gas properties for SGERG-88 (ISO 12213-3 style).</summary>
